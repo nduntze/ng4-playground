@@ -10,7 +10,7 @@ export class Hero {
   styleUrls: ['./app.component.css'],
   template: `
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>
+    <h2 (click)="alert()">My Heroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
@@ -85,6 +85,9 @@ export class AppComponent {
     } else {
       this.selectedHero = hero;
     }
+  }
+  alert(): void {
+    alert(`Pshh... You're my hero`);
   }
 }
 
